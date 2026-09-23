@@ -51,9 +51,9 @@ struct InforShop{
         cout << "nhap ten do an: ";
         cin >> x.NameFood;
         cout << "nhap ma do an: ";
-        cin >> x.NameFood;
+        cin >> x.IdFood;
         cout << "nhap gia do an: ";
-        cin >> x.NameFood;
+        cin >> x.Price;
         cout << "nhap so luong do an con lai: ";
         cin >> x.ReQuantity;
         
@@ -208,7 +208,12 @@ struct InforShop{
     }
 
     int sumOrder(){
-
+        int sum = 0;
+        for (int i = 0; i < lenorder; i++)
+        {
+            sum += Order[i].Quantity;
+        }
+        return sum;
     }
 
     void listOrder(){
