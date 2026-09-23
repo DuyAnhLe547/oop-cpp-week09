@@ -40,6 +40,25 @@ struct InforShop{
         cin >> lenorder;
     }
 
+    void inputlistfood(){
+        cout << "nhap danh sach mon an: ";
+        for (int i = 0; i < lenfood; i++)
+        {
+            cout << "Nhap mon an thu " << i + 1 << endl;
+
+            cout << "Nhap ten do an: ";
+            cin >> Food[i].NameFood;
+
+            cout << "Nhap ma do an: ";
+            cin >> Food[i].IdFood;
+
+            cout << "Nhap gia do an: ";
+            cin >> Food[i].Price;
+
+            cout << "Nhap so luong con lai: ";
+            cin >> Food[i].ReQuantity;
+        }
+    }
 
     int addfood(){
         InforFood x;
@@ -63,25 +82,6 @@ struct InforShop{
         
     }
 
-    void inputlistfood(){
-        cout << "nhap danh sach mon an: ";
-        for (int i = 0; i < lenfood; i++)
-        {
-            cout << "Nhap mon an thu " << i + 1 << endl;
-
-            cout << "Nhap ten do an: ";
-            cin >> Food[i].NameFood;
-
-            cout << "Nhap ma do an: ";
-            cin >> Food[i].IdFood;
-
-            cout << "Nhap gia do an: ";
-            cin >> Food[i].Price;
-
-            cout << "Nhap so luong con lai: ";
-            cin >> Food[i].ReQuantity;
-        }
-    }
 
     void listfood(){
         cout << "danh sach cac mon an: ";
@@ -217,7 +217,17 @@ struct InforShop{
     }
 
     void listOrder(){
-
+        cout << "danh sach order";
+        for (int i = 0; i < lenorder; i++)
+        {
+            cout << "Order thu " << i + 1 << endl;
+            cout << "ID Order: " << Order[i].IdOrder << endl;
+            cout << "Khach hang: " << Order[i].NameCustomer << endl;
+            cout << "Dia chi giao: " << Order[i].DelAddress << endl;
+            cout << "Mon an: " << Order[i].FoodOrder << endl;
+            cout << "So luong: " << Order[i].Quantity << endl;
+            cout << "Trang thai: " << Order[i].status << endl;
+        }
     }
 
     void findOrder(){
