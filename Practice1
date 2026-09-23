@@ -1,0 +1,132 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+#define MAX 50
+
+struct InforFood{
+    string NameFood;
+    int IdFood;
+    int Price;
+    int ReQuantity;
+
+};
+
+struct InforOrder{
+    int IdOrder;
+    string NameCustomer;
+    int DelAddress;
+    string FoodOrder;
+    int Quantity;
+    string status;
+};
+
+struct InforShop{
+    string NameShop;
+    int PhoneNum;
+    string Address;
+
+    int lenfood;
+    int lenorder;
+
+    InforFood Food[MAX];
+    InforOrder Order[MAX];
+
+    InforShop(){
+        cout << "nhap so luong do an: ";
+        cin >> lenfood;
+
+        cout << "nhap so luong don dat hang: ";
+        cin >> lenorder;
+    }
+
+
+    int addfood(){
+        InforFood x;
+        if(lenfood >= MAX){
+            cout << "danh sach day";
+            return;
+        }
+
+        cout << "nhap ten do an: ";
+        cin >> x.NameFood;
+        cout << "nhap ma do an: ";
+        cin >> x.NameFood;
+        cout << "nhap gia do an: ";
+        cin >> x.NameFood;
+        cout << "nhap so luong do an con lai: ";
+        cin >> x.ReQuantity;
+        
+        Food[lenfood] = x;
+        lenfood++;
+        return 1;
+        
+    }
+
+    void inputlistfood(){
+        
+    }
+
+    void listfood(){
+        
+        
+    }
+
+    void findfood(){
+        
+    }
+
+    int updatePriceQuantity(){
+        
+    }
+
+    int createOrder(){
+        
+    }
+
+    void checkExist(){
+
+    }
+
+    void checkEnough(){
+
+    }
+
+    int sumOrder(){
+
+    }
+
+    void listOrder(){
+
+    }
+
+    void findOrder(){
+
+    }
+
+    void updateStatus(){
+
+    }
+
+    int ThongKeTongTien(){
+
+    }
+
+};
+
+
+
+void InputShop(InforShop &s){
+    cout << "Nhap ten cua hang: ";
+    cin >> s.NameShop;
+    cout << "Nhap sdt: ";
+    cin >> s.PhoneNum;
+    cout << "Nhap dia chi: ";
+    cin >> s.Address;
+}
+
+int main(){
+    InforShop shop;
+    InputShop(shop);
+}
+
