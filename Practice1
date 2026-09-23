@@ -136,7 +136,34 @@ struct InforShop{
     }
 
     int createOrder(){
-        
+        if (lenorder >= MAX)
+        {
+            cout << "danh sach order day" << endl;
+            return 0;
+        }
+
+        InforOrder x;
+
+        cout << "Nhap ID order: ";
+        cin >> x.IdOrder;
+
+        cout << "Nhap ten khach hang: ";
+        cin >> x.NameCustomer;
+
+        cout << "Nhap dia chi giao hang: ";
+        cin >> x.DelAddress;
+
+        cout << "Nhap mon an: ";
+        cin >> x.FoodOrder;
+
+        cout << "Nhap so luong: ";
+        cin >> x.Quantity;
+
+        x.status = "dang xu ly";
+
+        Order[lenorder] = x;
+        lenorder++;
+        return 1;
     }
 
     void checkExist(){
