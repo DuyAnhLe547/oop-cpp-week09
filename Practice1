@@ -231,7 +231,24 @@ struct InforShop{
     }
 
     void findOrder(){
-
+        int ID;
+        cout << "Nhap ID order can tim: ";
+        cin >> ID;
+        for (int i = 0; i < lenorder; i++)
+        {
+            if (Order[i].IdOrder == ID)
+            {
+                cout << "ID Order: " << Order[i].IdOrder << endl;
+                cout << "Khach hang: " << Order[i].NameCustomer << endl;
+                cout << "Dia chi: " << Order[i].DelAddress << endl;
+                cout << "Mon an: " << Order[i].FoodOrder << endl;
+                cout << "So luong: " << Order[i].Quantity << endl;
+                cout << "Trang thai: " << Order[i].status << endl;
+                return;
+            }
+        
+         }
+        cout << "Khong tim thay order" << endl;
     }
 
     void updateStatus(){
