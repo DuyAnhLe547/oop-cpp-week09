@@ -84,8 +84,15 @@ struct InforShop{
     }
 
     void listfood(){
-        
-        
+        cout << "danh sach cac mon an: ";
+        for (int i = 0; i < lenfood; i++)
+        {
+            cout << "Mon an thu " << i + 1 << endl;
+            cout << "Ten mon: " << Food[i].NameFood << endl;
+            cout << "Ma mon: " << Food[i].IdFood << endl;
+            cout << "Gia: " << Food[i].Price << endl;
+            cout << "So luong con lai: " << Food[i].ReQuantity << endl;
+        }
     }
 
     void findfood(){
