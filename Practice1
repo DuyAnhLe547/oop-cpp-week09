@@ -96,7 +96,20 @@ struct InforShop{
     }
 
     void findfood(){
-        
+        int ID;
+        cout << "Nhap ID mon an can tim: ";
+        cin >> ID;
+        for (int i = 0; i < lenfood; i++)
+        {
+            if (Food[i].IdFood == ID)
+            {
+                cout << "tim thay mon an tai: " << i << endl;
+                cout << "ten mon: " << Food[i].NameFood << endl;
+                cout << "gia: " << Food[i].Price << endl;
+                cout << "so luong con lai: " << Food[i].ReQuantity << endl;
+                return;
+            }
+        }
     }
 
     int updatePriceQuantity(){
