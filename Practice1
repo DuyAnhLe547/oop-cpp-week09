@@ -113,7 +113,26 @@ struct InforShop{
     }
 
     int updatePriceQuantity(){
-        
+        int ID;
+        cout << "Nhap ID mon an can cap nhat: ";
+        cin >> ID;
+
+        for (int i = 0; i < lenfood; i++)
+        {
+            if (Food[i].IdFood == ID)
+            {
+                cout << "Nhap gia moi: ";
+                cin >> Food[i].Price;
+
+                cout << "Nhap so luong moi: ";
+                cin >> Food[i].ReQuantity;
+
+                return 1;
+            }
+        }
+
+        cout << "Khong tim thay mon an" << endl;
+        return 0;
     }
 
     int createOrder(){
