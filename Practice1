@@ -182,7 +182,29 @@ struct InforShop{
     }
 
     void checkEnough(){
+        int ID;
+        int quantity;
+        cout << "Nhap ID mon an: ";
+        cin >> ID;
+        cout << "Nhap so luong can mua: ";
+        cin >> quantity;
+        for (int i = 0; i < lenfood; i++)
+        {
+            if (Food[i].IdFood == ID)
+            {
+                if (Food[i].ReQuantity >= quantity)
+                {
+                    cout << "So luong mon an du" << endl;
+                }
+                else
+                {
+                    cout << "So luong mon an khong du" << endl;
+                }
 
+                return;
+            }
+        }
+        cout << "Mon an khong ton tai" << endl;
     }
 
     int sumOrder(){
