@@ -16,7 +16,7 @@ struct InforOrder{
     int IdOrder;
     string NameCustomer;
     int DelAddress;
-    string FoodOrder;
+    int FoodOrder;
     int Quantity;
     string status;
 };
@@ -269,7 +269,17 @@ struct InforShop{
     }
 
     int ThongKeTongTien(){
+        int total = 0;
+        for (int i = 0; i < lenorder; i++){
+            for (int j = 0; j < lenfood; j++){
+                if (Food[j].IdFood == Order[i].FoodOrder){
+                    total += Food[j].Price * Order[i].Quantity;
+                    break;
+                }
+            }
+        }
 
+        return total;
     }
 
 };
@@ -288,5 +298,21 @@ void InputShop(InforShop &s){
 int main(){
     InforShop shop;
     InputShop(shop);
+    shop.inputlistfood();
+    shop.listfood();
+    shop.findfood();
+    shop.updatePriceQuantity();
+    shop.createOrder();
+    shop.checkExist();
+    shop.checkEnough();
+    cout << "Tong so luong mon da dat: "
+         << shop.sumOrder() << endl;
+    shop.listOrder();
+    shop.findOrder();
+    shop.updateStatus();
+    cout << "Tong tien cac hoa don: "
+         << shop.ThongKeTongTien() << endl;
+
+    return 0;
 }
 
