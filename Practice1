@@ -252,7 +252,20 @@ struct InforShop{
     }
 
     void updateStatus(){
+        int ID;
+        cout << "Nhap ID order can cap nhat: ";
+        cin >> ID;
 
+        for (int i = 0; i < lenorder; i++)
+        {
+            if (Order[i].IdOrder == ID)
+            {
+                cout << "Nhap trang thai moi: ";
+                cin >> Order[i].status;
+                return;
+            }
+        }
+        cout << "Khong tim thay order" << endl;
     }
 
     int ThongKeTongTien(){
